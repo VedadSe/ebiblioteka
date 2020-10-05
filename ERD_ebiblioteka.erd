@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="ERD_ebiblioteka">
+	<entities>
+		<data-source id="postgres-jdbc-174e8a6bf1a-d5c60522e294a0">
+			<entity id="1" name="clan_posudjena_knjiga" fq-name="public.clan_posudjena_knjiga">
+				<path name="public"/>
+				<path name="ebiblioteka"/>
+			</entity>
+			<entity id="2" name="clanovi" fq-name="public.clanovi">
+				<path name="public"/>
+				<path name="ebiblioteka"/>
+			</entity>
+			<entity id="3" name="knjige" fq-name="public.knjige">
+				<path name="public"/>
+				<path name="ebiblioteka"/>
+			</entity>
+			<entity id="4" name="posudjene_knjige" fq-name="public.posudjene_knjige">
+				<path name="public"/>
+				<path name="ebiblioteka"/>
+			</entity>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="clan_posudjena_knjiga_clan_id_fkey" fq-name="public.clan_posudjena_knjiga.clan_posudjena_knjiga_clan_id_fkey" type="fk" pk-ref="2" fk-ref="1"/>
+		<relation name="posudjene_knjige_knjiga_id_fkey" fq-name="public.posudjene_knjige.posudjene_knjige_knjiga_id_fkey" type="fk" pk-ref="3" fk-ref="4"/>
+		<relation name="clan_posudjena_knjiga_posudjena_knjiga_id_fkey" fq-name="public.clan_posudjena_knjiga.clan_posudjena_knjiga_posudjena_knjiga_id_fkey" type="fk" pk-ref="4" fk-ref="1"/>
+	</relations>
+</diagram>
